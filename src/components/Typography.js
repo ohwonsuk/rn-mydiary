@@ -1,19 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Text as RNText } from 'react-native';
 import propTypes from 'prop-types';
 
-export default class Typography extends Component {
-  render() {
-    return (
-      <RNText style=
-      {{
-        color:this.props.color, 
-        fontSize: this.props.fontSize
-        }}>
-        {this.props.children}
-      </RNText>
-    )
-  }
+export default Typography = (props) => {
+  return (
+    <RNText
+      style={{
+        color: props.color,
+        fontSize: props.fontSize
+      }}>
+      {props.children}
+    </RNText>
+  )
 }
 
 Typography.propTypes = {

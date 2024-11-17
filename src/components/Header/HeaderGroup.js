@@ -1,12 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { View } from 'react-native';
 
-export default class HeaderGroup extends Component {
-  render() {
-    return (
-      <View style={{flexDirection:'row', alignItems:'center'}}>
-        {this.props.children}
-      </View>
-    )
-  }
+export default HeaderGroup = (props) => {
+  return (
+    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+      {props.children}
+    </View>
+  )
 }

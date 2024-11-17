@@ -1,31 +1,24 @@
-import React, { Component } from 'react';
-import { View } from 'react-native';
+import React from 'react';
 import Badge from './Badge';
 import Icon from './Icons';
 
-export default class TabIcon extends Component {
-  render() {
-    if (this.props.visibleBadge){
-      return (
-        <View>
-          <Badge fontSize={10}>
-            <Icon 
-              name={this.props.iconName} 
-              size={20} 
-              color={'black'} 
-              />
-          </Badge>
-        </View>
-      )
-    }
+export default TabIcon = (props) => {
+  if (props.visibleBadge) {
     return (
-      <View>
-        <Icon 
-          name={this.props.iconName} 
-          size={20} 
-          color={'black'} 
-          />
-    </View>
+      <Badge fontSize={10}>
+        <Icon
+          name={props.iconName}
+          size={20}
+          color={'black'}
+        />
+      </Badge>
     )
   }
+  return (
+    <Icon
+      name={props.iconName}
+      size={20}
+      color={'black'}
+    />
+  )
 }

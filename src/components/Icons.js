@@ -1,14 +1,12 @@
-import React, { Component } from 'react'
+import React from 'react';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
-export default class Icon extends Component {
-  render() {
-    return (
-      <Ionicons 
-        name={this.props.name} 
-        size={this.props.size} 
-        color={this.props.color} 
-        />
-    )
-  }
+export default Icon = (props) => {
+  return (
+    <Ionicons
+      name={props.name}
+      size={props.size}
+      color={props.color}
+    />
+  )
 }

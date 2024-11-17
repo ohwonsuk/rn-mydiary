@@ -1,10 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Typography from '../Typography';
 
-export default class HeaderTitle extends Component {
-  render() {
-    return (
-      <Typography fontSize={18}>{this.props.title}</Typography>
-    )
-  }
+export default HeaderTitle = (props) => {
+  return (
+    <Typography fontSize={18}>{props.title}</Typography>
+  )
 }

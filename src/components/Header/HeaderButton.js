@@ -1,13 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Button from '../Button';
 import Icon from '../Icons';
 
-export default class HeaderIcon extends Component {
-  render() {
-    return (
-      <Button onPress={this.props.onPress}>
-        <Icon name={this.props.iconName} size={28} color='black' />
-      </Button>
-    )
-  }
+export default HeaderIcon = (props) => {
+  return (
+    <Button onPress={props.onPress}>
+      <Icon name={props.iconName} size={28} color='black' />
+    </Button>
+  )
 }

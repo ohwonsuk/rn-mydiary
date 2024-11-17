@@ -1,38 +1,33 @@
-import React, { Component } from 'react';
-import { SafeAreaInsetsContext } from 'react-native-safe-area-context';
-import { Dimensions, View } from 'react-native';
+import React from 'react';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useWindowDimensions, View } from 'react-native';
 import Spacer from '../Spacer';
 import HeaderTitle from './HeaderTitle';
 import HeaderIcon from './HeaderButton';
 import HeaderGroup from './HeaderGroup';
 
-const { width } = Dimensions.get('window');
+export default Header = (props) => {
+  const insets = useSafeAreaInsets();
+  const { width } = useWindowDimensions();
 
-export default class Header extends Component {
-  render() {
-    return (
-      <SafeAreaInsetsContext.Consumer>
-        {insets => (
-          <View style={{paddingTop:insets.top}}>
-            <View style={{
-              width:width,
-              flexDirection:'row',
-              height:56,
-              borderBottomColor:'gray',
-              borderBottomWidth:1,
-              alignItems:'center',
-              }}>
-              <Spacer horizontal={true} space={12} />
-              <View style={{flex:1, flexDirection:'row', justifyContent:'space-between'}}>
-                {this.props.children}
-              </View>
-              <Spacer horizontal={true} space={12} />
-            </View>
-          </View>
-        )}
-      </SafeAreaInsetsContext.Consumer>
-    )
-  }
+  return (
+    <View style={{ paddingTop: insets.top }}>
+      <View style={{
+        width: width,
+        flexDirection: 'row',
+        hegith: 56,
+        borderBottomColor: 'gray',
+        borderWidth: 1,
+        alignItems: 'center',
+      }}>
+        <Spacer horizontal={true} space={12} />
+        <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between' }}>
+          {props.children}
+        </View>
+        <Spacer horizontal={true} space={12} />
+      </View>
+    </View>
+  )
 }
 
 Header.Title = HeaderTitle;
